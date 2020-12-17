@@ -10,6 +10,8 @@ hintCount = -1
 
 guesses = int(input("How many guesses do you want?: "))
 seconds = 4
+lengthEnd = 0
+
 print(f'Starting game with {guesses} guesses in...')
 
 for i in range(3):
@@ -23,6 +25,7 @@ guess = ""
 while not guess == word:
     guesses -= 1
     hintCount += 1
+    lengthEnd += 1
     print(f'Your word is {len(word)} characters long.')
     if hintCount == 0:
         print(f'Hint: your words first letter is "{word[0]}"')
@@ -35,4 +38,7 @@ while not guess == word:
         break
     elif guesses <= 0:
         print("You lost :(")
+        break
+    elif lengthEnd >= len(word):
+        print("You lost by guessing more than the word is long!")
         break
