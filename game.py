@@ -1,7 +1,7 @@
 import time
 import requests
 
-KEY = "6755788fe1mshbe799a5a8347bf3p1413b5jsne93d75e37366"
+KEY = "yourkeyhere"
 HEADERS = {"x-rapidapi-key": KEY,
 	"x-rapidapi-host": "wordsapiv1.p.rapidapi.com"}
 
