@@ -1,13 +1,13 @@
 import time
-import random
+import requests
 
-wordList = ["cheese", "cum", "monkey", "food", "drink", "water", "tiger", "chips", "cola", "soda",
-            "chicken", "finger", "arm", "head", "penis", "dick", "cock", "rooster", "cocaine",
-            "coke", "python", "danish", "british", "american", "turkey", "harry", "potter",
-            "harry potter", "ginger", "chili", "meme"]
-word = random.choice(wordList)
+KEY = "6755788fe1mshbe799a5a8347bf3p1413b5jsne93d75e37366"
+HEADERS = {"x-rapidapi-key": KEY,
+	"x-rapidapi-host": "wordsapiv1.p.rapidapi.com"}
 
-guesses = int(input("How many guesses do you want?: "))
+word = requests.get(url="https://wordsapiv1.p.rapidapi.com/words/?random=true", headers=HEADERS).json()['word']
+
+guesses = int(input("How many guesses do you want? (A lot is recommended as theres alot of possible words...): "))
 seconds = 4
 print(f'Starting game with {guesses} guesses in...')
 
